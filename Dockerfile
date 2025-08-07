@@ -10,6 +10,8 @@ RUN \
   && poetry install --no-root --without dev --no-interaction --no-ansi \
   && poetry build \
   && poetry export -f requirements.txt --output requirements.txt
+#Fix railway error 
+ENV DD_TRACE_ENABLED=false
 
 # Build the nodejs app
 FROM python:${PYTHON_MAJOR}-slim AS nodebuild
