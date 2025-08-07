@@ -73,8 +73,8 @@ RUN apt-get update && \
   apt-get install -yqq nodejs=$(apt-cache show nodejs|grep Version|grep nodesource|cut -c 10-) yarn && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
-COPY --from=pybuild /usr/local/src/app/requirements.txt /usr/local/src/requirements.txt
-RUN pip3 install -r /usr/local/src/requirements.txt && rm -rf /root/.cache/pip
+#COPY --from=pybuild /usr/local/src/app/requirements.txt /usr/local/src/requirements.txt
+#RUN pip3 install -r /usr/local/src/requirements.txt && rm -rf /root/.cache/pip
 COPY --from=nodebuild /usr/local/src/app/packages ./packages
 COPY --from=nodebuild /usr/local/src/app/node_modules ./node_modules
 COPY --from=nodebuild /usr/local/src/app/package.json ./package.json
