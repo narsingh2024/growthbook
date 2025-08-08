@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@growthbook/growthbook": ["./packages/sdk-js/dist"],
+      "@growthbook/growthbook-react": ["./packages/sdk-react/dist"]
+    },
+    "skipLibCheck": true
+  },
+  "references": [
+    { "path": "packages/sdk-js" },
+    { "path": "packages/sdk-react" },
+    { "path": "packages/shared" }
+  ]
+}

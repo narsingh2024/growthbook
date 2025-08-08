@@ -3,7 +3,8 @@ import json
 import time
 import sys
 import traceback
-from gbstats.gbstats import process_multiple_experiment_results
+#from gbstats.gbstats import process_multiple_experiment_results
+from gbstats.gbstats import process_experiment_results
 
 for line in sys.stdin:
     start = time.time()
@@ -39,7 +40,7 @@ for line in sys.stdin:
 
     # Process experiment results
     try:
-        results = [asdict(analysis) for analysis in process_multiple_experiment_results(data)]
+        results = [asdict(analysis) for analysis in process_experiment_results(data)]
         sys.stdout.write(json.dumps({
             'id': id,
             'results': results,

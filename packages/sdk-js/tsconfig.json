@@ -1,12 +1,21 @@
+// {
+//   "compilerOptions": {
+//     "skipLibCheck": true,
+//     "outDir": "dist",
+//     "declaration": true,
+//     "declarationMap": true,
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "resolveJsonModule": true
+//   },
+//   "include": ["./src"]
+// }
+
 {
+  "extends": "../../tsconfig.json", // Inherits from root config
   "compilerOptions": {
-    "skipLibCheck": true,
-    "outDir": "dist",
-    "declaration": true,
-    "declarationMap": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src" // Source directory
   },
-  "include": ["./src"]
+  "include": ["src/**/*"] // Files to include in compilation
 }
